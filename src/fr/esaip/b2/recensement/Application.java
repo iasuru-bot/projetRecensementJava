@@ -3,6 +3,7 @@ package fr.esaip.b2.recensement;
 import fr.esaip.b2.recensement.entities.Recensement;
 import fr.esaip.b2.recensement.tools.ImporterRecensement;
 import fr.esaip.b2.recensement.tools.RecherchePopulationDepartement;
+import fr.esaip.b2.recensement.tools.RecherchePopulationRegion;
 import fr.esaip.b2.recensement.tools.RecherchePopulationVille;
 
 import java.io.IOException;
@@ -12,7 +13,7 @@ import java.util.Scanner;
 public class Application {
 
     public static void main(String[] args) {
-
+        //création de l'instance recensement à partir d'un csv
         ImporterRecensement importerRecensement = new ImporterRecensement();
         Recensement recensement = new Recensement();
         try{recensement= importerRecensement.CreationRecensement();}
@@ -21,31 +22,39 @@ public class Application {
             System.err.println("Problème rencontré lors de la création du rencensement");
         }
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("_______________________________________________________________");
-        System.out.println("|Texte blabalblabalbalbalbalabalblabalbalbalablababalabalbablb|");
-        System.out.println("|Texte blabalblabalbalbalbalabalblabalbalbalablababalabalbablb|");
-        System.out.println("|Texte blabalblabalbalbalbalabalblabalbalbalablababalabalbablb|");
-        System.out.println("|_____________________________________________________________|");
-        int choix = 0;
-        try {choix = scanner.nextInt();}
-        catch (InputMismatchException e){
-            e.printStackTrace();
-            System.err.println("Vous n'avez pas saisi une valeur chiffrée");
-        }
 
-        switch (choix) {
-            case 1:
-                RecherchePopulationVille recherchePopulationVille = new RecherchePopulationVille();
-                recherchePopulationVille.traiter(recensement,scanner);
-                break;
-            case 2:
-                RecherchePopulationDepartement recherchePopulationDepartement = new RecherchePopulationDepartement();
-                recherchePopulationDepartement.traiter(recensement,scanner);
-                break;
-            /*case 3:
-                break;
-            case 4:
+
+        boolean fin = false;
+        do {
+
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("_______________________________________________________________");
+            System.out.println("|Texte blabalblabalbalbalbalabalblabalbalbalablababalabalbablb|");
+            System.out.println("|Texte blabalblabalbalbalbalabalblabalbalbalablababalabalbablb|");
+            System.out.println("|Texte blabalblabalbalbalbalabalblabalbalbalablababalabalbablb|");
+            System.out.println("|_____________________________________________________________|");
+            int choix = 0;
+            try {choix = scanner.nextInt();}
+            catch (InputMismatchException e){
+                e.printStackTrace();
+                System.err.println("Vous n'avez pas saisi une valeur chiffrée");
+            }
+
+            switch (choix) {
+                case 1:
+                    RecherchePopulationVille recherchePopulationVille = new RecherchePopulationVille();
+                    recherchePopulationVille.traiter(recensement,scanner);
+                    break;
+                case 2:
+                    RecherchePopulationDepartement recherchePopulationDepartement = new RecherchePopulationDepartement();
+                    recherchePopulationDepartement.traiter(recensement,scanner);
+                    break;
+                case 3:
+                    RecherchePopulationRegion recherchePopulationRegion= new RecherchePopulationRegion();
+                    recherchePopulationRegion.traiter(recensement,scanner);
+                    break;
+
+            /*case 4:
                 break;
             case 5:
                 break;
@@ -54,12 +63,15 @@ public class Application {
             case 7:
                 break;
             case 8:
-                break;
-            case 9:
                 break;*/
-            default:
+            case 9:
+                fin=true;
                 break;
-        }
+            default:
+
+                break;
+            }
+        }while (!fin);
 
 
 

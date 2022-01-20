@@ -16,7 +16,6 @@ public class RecherchePopulationDepartement extends MenuService{
         int choix = 0;
         try {choix = scanner.nextInt();}
         catch (InputMismatchException e){
-            e.printStackTrace();
             System.err.println("Vous n'avez pas saisi une valeur chiffrée");
         }
         switch (choix){
@@ -28,7 +27,6 @@ public class RecherchePopulationDepartement extends MenuService{
                 int populationDepartement=0;
                 try {codeDep = scan.next();}
                 catch (InputMismatchException e){
-                    e.printStackTrace();
                     System.err.println("Vous n'avez pas saisi une bonne valeur");
                 }
                 for (Ville v:recensement.getVilles()) {
@@ -51,7 +49,8 @@ public class RecherchePopulationDepartement extends MenuService{
                 break;
 
             default:
-                System.out.println();
+                System.out.println("Votre choix n'est pas bon.");
+                break;
 
         }
     }
