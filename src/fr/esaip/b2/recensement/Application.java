@@ -7,11 +7,11 @@ public class Application {
         System.out.println(a);
 
 
-        // Je pense su'il faut créer une autre classe utilitaire lier avec
+        // Je pense qu'il faut créer une autre classe utilitaire liée avec
         // les villes, les régions , les départements et le recensement afin
         // de tout créer au même endroit.
 
-        /*switch case d'un choix avec dans chaque case un appel une classe
+        /*switch case d'un choix avec dans chaque case un appel d'une classe
         utilitaire permettant d'afficher le résultat de la recherche.
         Chaque classe utilitaire et hérite de la classe abstraite Menu service
         */
