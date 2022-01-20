@@ -2,18 +2,13 @@ package fr.esaip.b2.recensement.entities;
 
 public class Ville {
     private int codeRegion;
-    private int nomRegion;
+    private String nomRegion;
     private int codeDepartement;
     private int codeCommune;
-    private int nomCommune;
+    private String nomCommune;
     private int populationTotale;
 
-
-
-
-
-
-    public Ville(int codeRegion, int nomRegion, int codeDepartement, int codeCommune, int nomCommune, int populationTotale) {
+    public Ville(int codeRegion, String nomRegion, int codeDepartement, int codeCommune, String nomCommune, int populationTotale) {
         this.codeRegion = codeRegion;
         this.nomRegion = nomRegion;
         this.codeDepartement = codeDepartement;
@@ -30,11 +25,11 @@ public class Ville {
         this.codeRegion = codeRegion;
     }
 
-    public int getNomRegion() {
+    public String getNomRegion() {
         return nomRegion;
     }
 
-    public void setNomRegion(int nomRegion) {
+    public void setNomRegion(String nomRegion) {
         this.nomRegion = nomRegion;
     }
 
@@ -54,11 +49,11 @@ public class Ville {
         this.codeCommune = codeCommune;
     }
 
-    public int getNomCommune() {
+    public String getNomCommune() {
         return nomCommune;
     }
 
-    public void setNomCommune(int nomCommune) {
+    public void setNomCommune(String nomCommune) {
         this.nomCommune = nomCommune;
     }
 
