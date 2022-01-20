@@ -45,6 +45,6 @@ public class ImporterRecensement {
        for (Ville ville: recensement.getVilles()) {
            System.out.println(ville.getNomCommune());
        }
-        return null;
+        return recensement;
    }
 }
