@@ -1,4 +1,6 @@
-package fr.esaip.b2.recensement.entities;
+package fr.esaip.b2.recensement.tools;
+
+import fr.esaip.b2.recensement.entities.Recensement;
 
 import java.util.Scanner;
 

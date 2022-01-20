@@ -4,5 +4,6 @@ package fr.esaip.b2.recensement.entities;
 // et peut etre méthode pour ajouter une ville à la liste.
 public class Recensement {
 
+    
     //TO DO: liste de villes
 }
