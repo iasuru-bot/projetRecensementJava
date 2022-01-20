@@ -2,6 +2,7 @@ package fr.esaip.b2.recensement;
 
 import fr.esaip.b2.recensement.entities.Recensement;
 import fr.esaip.b2.recensement.tools.ImporterRecensement;
+import fr.esaip.b2.recensement.tools.RecherchePopulationDepartement;
 import fr.esaip.b2.recensement.tools.RecherchePopulationVille;
 
 import java.io.IOException;
@@ -35,13 +36,14 @@ public class Application {
 
         switch (choix) {
             case 1:
-                RecherchePopulationVille recherche = new RecherchePopulationVille();
-                recherche.traiter(recensement,scanner);
+                RecherchePopulationVille recherchePopulationVille = new RecherchePopulationVille();
+                recherchePopulationVille.traiter(recensement,scanner);
                 break;
-            /*case 2:
-
+            case 2:
+                RecherchePopulationDepartement recherchePopulationDepartement = new RecherchePopulationDepartement();
+                recherchePopulationDepartement.traiter(recensement,scanner);
                 break;
-            case 3:
+            /*case 3:
                 break;
             case 4:
                 break;
