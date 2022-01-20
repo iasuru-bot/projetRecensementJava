@@ -1,6 +1,8 @@
 package fr.esaip.b2.recensement.entities;
 
+//Classe regroupant juste une liste de villes de toutes les villes. Attention au constructeur!
+// et peut etre méthode pour ajouter une ville à la liste.
 public class Recensement {
 
-    //TO DO: méthode permettant de lire un fichier contenant les villes et 2 ème méthode en faire une liste
+    //TO DO: liste de villes
 }
