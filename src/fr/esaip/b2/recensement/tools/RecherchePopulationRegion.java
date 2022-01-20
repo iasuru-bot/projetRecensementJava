@@ -10,6 +10,8 @@ import java.util.Scanner;
 public class RecherchePopulationRegion extends MenuService{
     @Override
     public void traiter(Recensement recensement, Scanner scanner) {
+
+
         System.out.println("Vous avez choisi de rechercher la population d'une région:");
         System.out.println("1-Rechercher par le nom d'une région");
         System.out.println("2-Rechercher par le code d'une région");

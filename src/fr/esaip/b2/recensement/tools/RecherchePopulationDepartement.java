@@ -9,9 +9,8 @@ import java.util.Scanner;
 public class RecherchePopulationDepartement extends MenuService{
     @Override
     public void traiter(Recensement recensement, Scanner scanner) {
-        System.out.println("Vous avez choisi de rechercher la population d'un département:");
-        System.out.println("1-Rechercher par le code du département");
-        System.out.println("2-Sortir");
+        CadreSortie.Cadre("Vous avez choisi de rechercher la population d'un département 1-Rechercher par le code du département 2-Sortir");
+
         boolean departementExiste=false;
         int choix = 0;
         try {choix = scanner.nextInt();}
@@ -20,8 +19,8 @@ public class RecherchePopulationDepartement extends MenuService{
         }
         switch (choix){
             case 1:
-                System.out.println("Vous avez choisi de rechercher par le code du département");
-                System.out.println("Veuillez saisir le code du département recherché:");
+                CadreSortie.Cadre("Vous avez choisi de rechercher par le code du département Veuillez saisir le code du département recherché:");
+
                 Scanner scan = new Scanner(System.in);
                 String codeDep = null;
                 int populationDepartement=0;

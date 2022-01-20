@@ -1,10 +1,7 @@
 package fr.esaip.b2.recensement;
 
 import fr.esaip.b2.recensement.entities.Recensement;
-import fr.esaip.b2.recensement.tools.ImporterRecensement;
-import fr.esaip.b2.recensement.tools.RecherchePopulationDepartement;
-import fr.esaip.b2.recensement.tools.RecherchePopulationRegion;
-import fr.esaip.b2.recensement.tools.RecherchePopulationVille;
+import fr.esaip.b2.recensement.tools.*;
 
 import java.io.IOException;
 import java.util.InputMismatchException;
@@ -28,11 +25,7 @@ public class Application {
         do {
 
             Scanner scanner = new Scanner(System.in);
-            System.out.println("_______________________________________________________________");
-            System.out.println("|Texte blabalblabalbalbalbalabalblabalbalbalablababalabalbablb|");
-            System.out.println("|Texte blabalblabalbalbalbalabalblabalbalbalablababalabalbablb|");
-            System.out.println("|Texte blabalblabalbalbalbalabalblabalbalbalablababalabalbablb|");
-            System.out.println("|_____________________________________________________________|");
+            CadreSortie.Cadre("Texte blabalblabalbalbalbalabalblabalbalbalablababal");
             int choix = 0;
             try {choix = scanner.nextInt();}
             catch (InputMismatchException e){

@@ -41,10 +41,6 @@ public class ImporterRecensement {
             Ville ville = new Ville(Integer.parseInt(codeRegion),nomRegion,codeDepartement,Integer.parseInt(codeCommune),nomCommune,populationTotale);
             recensement.getVilles().add(ville);
         }
-
-       for (Ville ville: recensement.getVilles()) {
-           System.out.println(ville.getNomCommune());
-       }
         return recensement;
    }
 }
