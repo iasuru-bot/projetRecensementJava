@@ -1,10 +1,20 @@
 package fr.esaip.b2.recensement;
 
+import fr.esaip.b2.recensement.entities.Recensement;
+import fr.esaip.b2.recensement.tools.ImporterRecensement;
+
+import java.io.IOException;
+
 public class Application {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         int a=1;
         System.out.println(a);
+        ImporterRecensement importerRecensement = new ImporterRecensement();
+        try{Recensement recensement= importerRecensement.CreationRecensement();}
+        catch (IOException e){
+            e.printStackTrace();
+        }
 
 
         // Je pense qu'il faut créer une autre classe utilitaire liée avec

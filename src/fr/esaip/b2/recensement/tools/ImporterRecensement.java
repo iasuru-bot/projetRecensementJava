@@ -8,16 +8,16 @@ import java.nio.file.*;
 import java.util.List;
 
 public class ImporterRecensement {
-    public static void main(String[] args){
-    }
 
-   /* public Recensement CreationRecensement() throws IOException {
+
+   public Recensement CreationRecensement() throws IOException {
         Path path = Paths.get("src/recensement_2016.csv");
         boolean estLisible = Files.isReadable(path);
         // pour vérifier les lignes qui ressortent
         List<String> lignes = Files.readAllLines(path, StandardCharsets.UTF_8);
-        /*System.out.println(lignes);
         System.out.println("Bon chemin : "+estLisible);
+
+        Recensement recensement= new Recensement();
 
         for (String ligne:lignes) {
             // On commence par découper la ligne en morceaux sur la base du caractère séparateur « ; » .
@@ -38,7 +38,13 @@ public class ImporterRecensement {
 
             // On cree maintenant la ville avec toutes ses données utiles
 
-            //Ville ville = new Ville(codeRegion, nomRegion, codeDepartement, codeCommune, nomCommune, populationTotale);
+            Ville ville = new Ville(Integer.parseInt(codeRegion),nomRegion,codeDepartement,Integer.parseInt(codeCommune),nomCommune,populationTotale);
+            recensement.getVilles().add(ville);
         }
-    }*/
+
+       for (Ville ville: recensement.getVilles()) {
+           System.out.println(ville.getNomCommune());
+       }
+        return null;
+   }
 }
