@@ -2,24 +2,65 @@ package fr.esaip.b2.recensement;
 
 import fr.esaip.b2.recensement.entities.Recensement;
 import fr.esaip.b2.recensement.tools.ImporterRecensement;
+import fr.esaip.b2.recensement.tools.RecherchePopulationVille;
 
 import java.io.IOException;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 public class Application {
 
-    public static void main(String[] args) throws IOException {
-        int a=1;
-        System.out.println(a);
+    public static void main(String[] args) {
+
         ImporterRecensement importerRecensement = new ImporterRecensement();
-        try{Recensement recensement= importerRecensement.CreationRecensement();}
+        Recensement recensement = new Recensement();
+        try{recensement= importerRecensement.CreationRecensement();}
         catch (IOException e){
             e.printStackTrace();
+            System.err.println("Problème rencontré lors de la création du rencensement");
+        }
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("_______________________________________________________________");
+        System.out.println("|Texte blabalblabalbalbalbalabalblabalbalbalablababalabalbablb|");
+        System.out.println("|Texte blabalblabalbalbalbalabalblabalbalbalablababalabalbablb|");
+        System.out.println("|Texte blabalblabalbalbalbalabalblabalbalbalablababalabalbablb|");
+        System.out.println("|_____________________________________________________________|");
+        int choix = 0;
+        try {choix = scanner.nextInt();}
+        catch (InputMismatchException e){
+            e.printStackTrace();
+            System.err.println("Vous n'avez pas saisi une valeur chiffrée");
+        }
+
+        switch (choix) {
+            case 1:
+                RecherchePopulationVille recherche = new RecherchePopulationVille();
+                recherche.traiter(recensement,scanner);
+                break;
+            /*case 2:
+
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            case 5:
+                break;
+            case 6:
+                break;
+            case 7:
+                break;
+            case 8:
+                break;
+            case 9:
+                break;*/
+            default:
+                break;
         }
 
 
-        // Je pense qu'il faut créer une autre classe utilitaire liée avec
-        // les villes, les régions , les départements et le recensement afin
-        // de tout créer au même endroit.
+
 
         /*switch case d'un choix avec dans chaque case un appel d'une classe
         utilitaire permettant d'afficher le résultat de la recherche.
