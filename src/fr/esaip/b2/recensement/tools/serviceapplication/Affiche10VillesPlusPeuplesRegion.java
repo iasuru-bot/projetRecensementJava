@@ -22,6 +22,7 @@ public class Affiche10VillesPlusPeuplesRegion extends MenuService {
             case 1:
                 CadreSortie.Cadre("Veuillez saisir le nom de la région souhaitée:");
 
+                //Récupère le nom de la région
                 Scanner scan = new Scanner(System.in);
                 String nomRegion = null;
                 try {nomRegion = scan.nextLine();}
@@ -29,7 +30,7 @@ public class Affiche10VillesPlusPeuplesRegion extends MenuService {
                     System.err.println("Vous n'avez pas saisi une bonne valeur");
                 }
 
-
+                //Liste des villes présentes dans une région
                 List<Ville> villesDansRegion= new ArrayList<>();
                 boolean regionExiste=false;
                 for (Ville v:recensement.getVilles()) {
@@ -38,7 +39,11 @@ public class Affiche10VillesPlusPeuplesRegion extends MenuService {
                         villesDansRegion.add(v);
                     }
                 }
+
+                //Tri en fonction du comparator
                 villesDansRegion.sort(new VillesPopulationComparator());
+
+                //Ressort le classement
                 int nombreVillesDansRegion=villesDansRegion.size();
                 if (nombreVillesDansRegion>10){nombreVillesDansRegion=10;}
                 if (regionExiste) {

@@ -25,6 +25,7 @@ public class RecherchePopulationVille extends MenuService {
             case 1:
                 CadreSortie.Cadre("Vous avez choisi de rechercher par le nom de la ville\nVeuillez saisir le nom de la ville recherchée:");
 
+                //Récupère le nom de la ville
                 Scanner scan = new Scanner(System.in);
                 String nomVille = null;
                 try {nomVille = scan.nextLine();}
@@ -32,6 +33,7 @@ public class RecherchePopulationVille extends MenuService {
                     System.err.println("Vous n'avez pas saisi une bonne valeur");
                 }
 
+                //retourne la population de la ville
                 boolean villeExiste=false;
                 for (Ville v:recensement.getVilles()) {
                     if(v.getNomCommune().equals(nomVille)){
@@ -48,7 +50,6 @@ public class RecherchePopulationVille extends MenuService {
 
             default:
                 CadreSortie.Cadre("Votre choix n'est pas bon.");
-
 
         }
         CadreSortie.Cadre(" Vous allez être redirigé vers le menu.");

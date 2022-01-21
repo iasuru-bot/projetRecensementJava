@@ -1,6 +1,7 @@
 package fr.esaip.b2.recensement.tools.utilitaires;
 
 public class CadreSortie {
+    //méthode permettant d'afficher un cadre de sortie avec des #
     public static void Cadre(String valeur){
         System.out.println("####################################################################################################");
         int valeurLongueur = valeur.length();
@@ -24,7 +25,6 @@ public class CadreSortie {
             j++;
         }
         for (String s : tab) {
-
             System.out.println("#" + s + "#");
         }
         System.out.println("####################################################################################################");

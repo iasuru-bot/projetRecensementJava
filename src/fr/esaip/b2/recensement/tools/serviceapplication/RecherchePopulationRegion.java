@@ -25,6 +25,7 @@ public class RecherchePopulationRegion extends MenuService {
             case 1:
                 CadreSortie.Cadre("Vous avez choisi de rechercher par le nom d'une région \n Veuillez saisir le nom de la region recherché:");
 
+                //Récupère le nom de la région
                 String nomRegion = null;
                 try {
                     nomRegion = scanner.next();
@@ -32,8 +33,10 @@ public class RecherchePopulationRegion extends MenuService {
                     System.err.println("Vous n'avez pas saisi une bonne valeur");
                 }
 
+                //Calcul du nombre d'habitants dans la région
                 Region region= CalculPopulation.calculHabitantsRegion(recensement,nomRegion,0);
 
+                //Retourne le résultat
                 if (region!=null){
 
                     String rep =("La région "+region.getNomRegion()+ " "+ region.getCodeRegion()+ " a "+ region.getPopulationRegion()+" habitants");
@@ -48,6 +51,7 @@ public class RecherchePopulationRegion extends MenuService {
             case 2:
                 CadreSortie.Cadre("Vous avez choisi de rechercher par le code d'une région\nVeuillez saisir le code de la region recherché:");
 
+                //récupère le code de la région
                 int codeRegion = 0;
                 try {
                     codeRegion = scanner.nextInt();
@@ -55,7 +59,10 @@ public class RecherchePopulationRegion extends MenuService {
                     System.err.println("Vous n'avez pas saisi une bonne valeur");
                 }
 
+                //Calcul le nombre d'habitants de la région
                 region=CalculPopulation.calculHabitantsRegion(recensement,"",codeRegion);
+
+                //Retourne le résultat
                 if (region!=null){
                     String rep =("La région "+region.getNomRegion()+ " "+ region.getCodeRegion()+ " a "+ region.getPopulationRegion()+" habitants");
                     CadreSortie.Cadre(rep);

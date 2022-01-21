@@ -7,7 +7,7 @@ import fr.esaip.b2.recensement.entities.Ville;
 
 public class CalculPopulation {
 
-
+    //méthode permettant de calculer la population d'une région à partir de son nom ou de son code
     public static Region calculHabitantsRegion(Recensement recensement, String nomRegion, int codeRegion){
         boolean regionExiste = false;
         int populationRegion= 0;
@@ -22,11 +22,14 @@ public class CalculPopulation {
                 codeRegionFinal=v.getCodeRegion();
             }
         }
+
         if (regionExiste) {
             region = new Region(populationRegion,nomRegionFinal,codeRegionFinal);
         }
         return region;
     }
+
+    //méthode permettant de calculer la population d'un département à partir  de son code
     public static Departement calculHabitantsDepartement(Recensement recensement, String codeDep) {
         boolean departementExiste = false;
         int populationDepartement = 0;

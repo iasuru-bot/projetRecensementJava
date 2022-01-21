@@ -9,13 +9,11 @@ import java.util.List;
 
 public class ImporterRecensement {
 
-
+    //méthode permettant de faire créer un recensement à partir d'un fichier.
    public Recensement CreationRecensement() throws IOException {
         Path path = Paths.get("src/recensement_2016.csv");
-        //boolean estLisible = Files.isReadable(path);
-        // pour vérifier les lignes qui ressortent
+
         List<String> lignes = Files.readAllLines(path, StandardCharsets.UTF_8);
-        //System.out.println("Bon chemin : "+estLisible);
 
         Recensement recensement= new Recensement();
 
@@ -39,6 +37,8 @@ public class ImporterRecensement {
             // On cree maintenant la ville avec toutes ses données utiles
 
             Ville ville = new Ville(Integer.parseInt(codeRegion),nomRegion,codeDepartement,Integer.parseInt(codeCommune),nomCommune,populationTotale);
+
+            //On l'ajoute à l'objet recensement
             recensement.getVilles().add(ville);
         }
         return recensement;

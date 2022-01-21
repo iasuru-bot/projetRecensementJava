@@ -22,7 +22,7 @@ public class RecherchePopulationDepartement extends MenuService {
         switch (choix){
             case 1:
                 CadreSortie.Cadre("Vous avez choisi de rechercher par le code du département Veuillez saisir le code du département recherché:");
-
+                //Récupere le code du département
                 Scanner scan = new Scanner(System.in);
                 String codeDep = null;
 
@@ -30,8 +30,10 @@ public class RecherchePopulationDepartement extends MenuService {
                 catch (InputMismatchException e){
                     System.err.println("Vous n'avez pas saisi une bonne valeur");
                 }
+                //calcul la population du département
                 Departement departement= CalculPopulation.calculHabitantsDepartement(recensement,codeDep);
 
+                //Ressort le résultat
                 if(departement!=null){
                     String rep =("Le département "+ departement.getCodeDepartement()+" a "+departement.getPopulationDepartement()+ " habitants");
                     CadreSortie.Cadre(rep);

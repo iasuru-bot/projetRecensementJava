@@ -22,7 +22,7 @@ public class Affiche10VillesPlusPeuplesDepartement extends MenuService {
         switch (choix){
             case 1:
                 CadreSortie.Cadre("Veuillez saisir le code du département souhaité:");
-
+                //On récupère le nom du département avec exception gérée
                 Scanner scan = new Scanner(System.in);
                 String codeDepartement = null;
                 try {codeDepartement = scan.nextLine();}
@@ -30,7 +30,7 @@ public class Affiche10VillesPlusPeuplesDepartement extends MenuService {
                     System.err.println("Vous n'avez pas saisi une bonne valeur.");
                 }
 
-
+                //Création d'une liste regroupant l'ensemble es listes du département
                 List<Ville> villesDansDepartement= new ArrayList<>();
                 boolean departementExiste=false;
                 for (Ville v:recensement.getVilles()) {
@@ -39,10 +39,16 @@ public class Affiche10VillesPlusPeuplesDepartement extends MenuService {
                         villesDansDepartement.add(v);
                     }
                 }
+
+                //Tri en fonction du comparator
                 villesDansDepartement.sort(new VillesPopulationComparator());
+
+                //Ressort le classement
+                int nombreVillesDansDepartement=villesDansDepartement.size();
+                if (nombreVillesDansDepartement>10){nombreVillesDansDepartement=10;}
                 if (departementExiste) {
                     CadreSortie.Cadre("Voici les 10 villes les plus peuplées du département " +codeDepartement+" :");
-                    for (int i = 0; i < 10; i++) {
+                    for (int i = 0; i < nombreVillesDansDepartement; i++) {
                         System.out.println((i + 1) + ". " + villesDansDepartement.get(i).getNomCommune() + " a " + villesDansDepartement.get(i).getPopulationTotale() + " habitants");
                     }
                     System.out.println("####################################################################################################");
