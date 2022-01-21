@@ -33,7 +33,7 @@ public class Affiche10DepartementPlusPeuples extends MenuService {
         departementExistant.sort(new DepartementPopulationComparator());
 
         //Ressort le classement des 10 premiers
-        CadreSortie.Cadre("Voici les 10 départements les plus peuplés :");
+        CadreSortie.Cadre(" Voici les 10 départements les plus peuplés :");
 
         for (int i = 0; i < 10; i++) {
             Departement departement = departementExistant.get(i);

@@ -47,7 +47,7 @@ public class Affiche10VillesPlusPeuplesRegion extends MenuService {
                 int nombreVillesDansRegion=villesDansRegion.size();
                 if (nombreVillesDansRegion>10){nombreVillesDansRegion=10;}
                 if (regionExiste) {
-                    CadreSortie.Cadre("Voici les 10 villes les plus peuplées de "+nomRegion+" :");
+                    CadreSortie.Cadre(" Voici les 10 villes les plus peuplées de "+nomRegion+" :");
                     for (int i = 0; i < nombreVillesDansRegion; i++) {
                         System.out.println((i + 1) + ". " + villesDansRegion.get(i).getNomCommune() + " a " + villesDansRegion.get(i).getPopulationTotale() + " habitants");
                     }

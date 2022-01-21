@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class RecherchePopulationDepartement extends MenuService {
     @Override
     public void traiter(Recensement recensement, Scanner scanner) {
-        CadreSortie.Cadre("Vous avez choisi de rechercher la population d'un département 1-Rechercher par le code du département 2-Sortir");
+        CadreSortie.Cadre(" Vous avez choisi de rechercher la population d'un département 1-Rechercher par le code du département 2-Sortir");
 
         int choix = 0;
         try {choix = scanner.nextInt();}
@@ -21,7 +21,7 @@ public class RecherchePopulationDepartement extends MenuService {
         }
         switch (choix){
             case 1:
-                CadreSortie.Cadre("Vous avez choisi de rechercher par le code du département Veuillez saisir le code du département recherché:");
+                CadreSortie.Cadre(" Vous avez choisi de rechercher par le code du département Veuillez saisir le code du département recherché:");
                 //Récupere le code du département
                 Scanner scan = new Scanner(System.in);
                 String codeDep = null;
@@ -35,7 +35,7 @@ public class RecherchePopulationDepartement extends MenuService {
 
                 //Ressort le résultat
                 if(departement!=null){
-                    String rep =("Le département "+ departement.getCodeDepartement()+" a "+departement.getPopulationDepartement()+ " habitants");
+                    String rep =(" Le département "+ departement.getCodeDepartement()+" a "+departement.getPopulationDepartement()+ " habitants");
                     CadreSortie.Cadre(rep);
                 }
                 else {
@@ -48,7 +48,7 @@ public class RecherchePopulationDepartement extends MenuService {
                 break;
 
             default:
-                CadreSortie.Cadre("Votre choix n'est pas bon.");
+                CadreSortie.Cadre(" Votre choix n'est pas bon.");
                 break;
         }
         CadreSortie.Cadre(" Vous allez être redirigé vers le menu.");

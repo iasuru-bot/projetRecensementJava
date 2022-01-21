@@ -15,8 +15,8 @@ public class Affiche10RegionPlusPeuplees extends MenuService {
     @Override
     public void traiter(Recensement recensement, Scanner scanner) {
 
-        //Création d'un set contenant tout les noms des régions
-        //On peut faire avec l'objet région mais cela crée un appel de fonction pour chaque ville donc grosses pertes de performance.
+        //Création d'un set contenant tous les noms des régions
+        //On peut faire avec l'objet Région mais cela crée un appel de fonction pour chaque ville donc grosses pertes de performance.
         Set<String> nomRegionExistante = new HashSet<>();
         for (Ville v : recensement.getVilles()) {
             nomRegionExistante.add(v.getNomRegion());
@@ -32,7 +32,7 @@ public class Affiche10RegionPlusPeuplees extends MenuService {
         regionExistante.sort(new RegionPopulationComparator());
 
         //Ressort le classement
-        CadreSortie.Cadre("Voici les 10 régions les plus peuplées de France :");
+        CadreSortie.Cadre(" Voici les 10 régions les plus peuplées de France :");
         for (int i = 0; i < 10; i++) {
             Region region = regionExistante.get(i);
             System.out.println((i+1)+".La région "+region.getNomRegion()+ " "+ region.getCodeRegion()+ " a "+ region.getPopulationRegion()+" habitants");

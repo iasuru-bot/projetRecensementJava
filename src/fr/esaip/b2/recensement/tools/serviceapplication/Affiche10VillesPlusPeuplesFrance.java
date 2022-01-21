@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class Affiche10VillesPlusPeuplesFrance extends MenuService {
     @Override
     public void traiter(Recensement recensement, Scanner scanner) {
-        CadreSortie.Cadre("Vous avez choisi d'afficher les 10 villes les plus peuplées de France.");
+        CadreSortie.Cadre(" Vous avez choisi d'afficher les 10 villes les plus peuplées de France.");
         //liste de toutes les villes de France
         List<Ville> listeVilles=recensement.getVilles();
 

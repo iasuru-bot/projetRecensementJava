@@ -13,7 +13,7 @@ public class RecherchePopulationVille extends MenuService {
     @Override
     public void traiter(Recensement recensement, Scanner scanner) {
 
-        CadreSortie.Cadre("Vous avez choisi de rechercher la population d'une ville:\n1-Rechercher par le nom de la ville\n2-Sortir");
+        CadreSortie.Cadre(" Vous avez choisi de rechercher la population d'une ville:\n1-Rechercher par le nom de la ville\n2-Sortir");
 
 
         int choix = 0;
@@ -23,7 +23,7 @@ public class RecherchePopulationVille extends MenuService {
         }
         switch (choix){
             case 1:
-                CadreSortie.Cadre("Vous avez choisi de rechercher par le nom de la ville\nVeuillez saisir le nom de la ville recherchée:");
+                CadreSortie.Cadre(" Vous avez choisi de rechercher par le nom de la ville\nVeuillez saisir le nom de la ville recherchée:");
 
                 //Récupère le nom de la ville
                 Scanner scan = new Scanner(System.in);
@@ -38,7 +38,7 @@ public class RecherchePopulationVille extends MenuService {
                 for (Ville v:recensement.getVilles()) {
                     if(v.getNomCommune().equals(nomVille)){
                         villeExiste = true;
-                        String rep=(v.getNomCommune()+" a "+v.getPopulationTotale()+ " habitants");
+                        String rep=(" "+v.getNomCommune()+" a "+v.getPopulationTotale()+ " habitants");
                         CadreSortie.Cadre(rep);
                     }
                 }
@@ -49,7 +49,7 @@ public class RecherchePopulationVille extends MenuService {
                 break;
 
             default:
-                CadreSortie.Cadre("Votre choix n'est pas bon.");
+                CadreSortie.Cadre(" Votre choix n'est pas bon.");
 
         }
         CadreSortie.Cadre(" Vous allez être redirigé vers le menu.");

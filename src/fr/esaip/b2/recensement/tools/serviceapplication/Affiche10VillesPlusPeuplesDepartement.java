@@ -12,7 +12,7 @@ public class Affiche10VillesPlusPeuplesDepartement extends MenuService {
     @Override
     public void traiter(Recensement recensement, Scanner scanner) {
 
-        CadreSortie.Cadre("Vous avez choisi d'afficher les 10 villes les plus peuplées d'un département\n 1- Saisir le code du département\n 2- Sortir");
+        CadreSortie.Cadre(" Vous avez choisi d'afficher les 10 villes les plus peuplées d'un département\n 1- Saisir le code du département\n 2- Sortir");
 
         int choix = 0;
         try {choix = scanner.nextInt();}
@@ -21,7 +21,7 @@ public class Affiche10VillesPlusPeuplesDepartement extends MenuService {
         }
         switch (choix){
             case 1:
-                CadreSortie.Cadre("Veuillez saisir le code du département souhaité:");
+                CadreSortie.Cadre(" Veuillez saisir le code du département souhaité:");
                 //On récupère le nom du département avec exception gérée
                 Scanner scan = new Scanner(System.in);
                 String codeDepartement = null;
@@ -47,7 +47,7 @@ public class Affiche10VillesPlusPeuplesDepartement extends MenuService {
                 int nombreVillesDansDepartement=villesDansDepartement.size();
                 if (nombreVillesDansDepartement>10){nombreVillesDansDepartement=10;}
                 if (departementExiste) {
-                    CadreSortie.Cadre("Voici les 10 villes les plus peuplées du département " +codeDepartement+" :");
+                    CadreSortie.Cadre(" Voici les 10 villes les plus peuplées du département " +codeDepartement+" :");
                     for (int i = 0; i < nombreVillesDansDepartement; i++) {
                         System.out.println((i + 1) + ". " + villesDansDepartement.get(i).getNomCommune() + " a " + villesDansDepartement.get(i).getPopulationTotale() + " habitants");
                     }
@@ -60,7 +60,7 @@ public class Affiche10VillesPlusPeuplesDepartement extends MenuService {
                 break;
 
             default:
-                CadreSortie.Cadre("Votre choix n'est pas bon.");
+                CadreSortie.Cadre(" Votre choix n'est pas bon.");
 
         }
         CadreSortie.Cadre(" Vous allez être redirigé vers le menu.");
