@@ -12,10 +12,10 @@ public class ImporterRecensement {
 
    public Recensement CreationRecensement() throws IOException {
         Path path = Paths.get("src/recensement_2016.csv");
-        boolean estLisible = Files.isReadable(path);
+        //boolean estLisible = Files.isReadable(path);
         // pour vérifier les lignes qui ressortent
         List<String> lignes = Files.readAllLines(path, StandardCharsets.UTF_8);
-        System.out.println("Bon chemin : "+estLisible);
+        //System.out.println("Bon chemin : "+estLisible);
 
         Recensement recensement= new Recensement();
 

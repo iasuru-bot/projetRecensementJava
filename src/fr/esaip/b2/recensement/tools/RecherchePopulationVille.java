@@ -10,10 +10,9 @@ public class RecherchePopulationVille extends MenuService{
 
     @Override
     public void traiter(Recensement recensement, Scanner scanner) {
-
-        System.out.println("Vous avez choisi de rechercher la population d'une ville:");
-        System.out.println("1-Rechercher par le nom de la ville");
-        System.out.println("2-Sortir");
+        CadreSortie.Cadre("Vous avez choisi de rechercher la population d'une ville:\n1-Rechercher par le nom de la ville\n2-Sortir");
+        //System.out.println("1-Rechercher par le nom de la ville");
+        //System.out.println("2-Sortir");
 
         int choix = 0;
         try {choix = scanner.nextInt();}
@@ -22,8 +21,7 @@ public class RecherchePopulationVille extends MenuService{
         }
         switch (choix){
             case 1:
-                System.out.println("Vous avez choisi de rechercher par le nom de la ville");
-                System.out.println("Veuillez saisir le nom de la ville recherchée:");
+                CadreSortie.Cadre("Vous avez choisi de rechercher par le nom de la ville\nVeuillez saisir le nom de la ville recherchée:");
 
 
                 Scanner scan = new Scanner(System.in);
@@ -37,7 +35,8 @@ public class RecherchePopulationVille extends MenuService{
                 for (Ville v:recensement.getVilles()) {
                     if(v.getNomCommune().equals(nomVille)){
                         villeExiste = true;
-                        System.out.println(v.getNomCommune()+" a "+v.getPopulationTotale()+ " habitants");
+                        String rep=(v.getNomCommune()+" a "+v.getPopulationTotale()+ " habitants");
+                        CadreSortie.Cadre(rep);
                     }
                 }
                 if (!villeExiste){System.err.println("La ville choisie n'existe pas");}
@@ -47,7 +46,7 @@ public class RecherchePopulationVille extends MenuService{
                 break;
 
             default:
-                System.out.println("Votre choix n'est pas bon.");
+                CadreSortie.Cadre("Votre choix n'est pas bon.");
 
         }
     }

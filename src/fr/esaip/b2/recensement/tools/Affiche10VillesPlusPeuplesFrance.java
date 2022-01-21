@@ -12,9 +12,10 @@ public class Affiche10VillesPlusPeuplesFrance extends MenuService{
     public void traiter(Recensement recensement, Scanner scanner) {
         System.out.println("Vous avez choisi nana");
         List<Ville> listeVilles=recensement.getVilles();
-        Collections.sort(listeVilles, new VillesPopulationComparator());
+        listeVilles.sort(new VillesPopulationComparator());
         for (int i = 0; i < 10; i++) {
-            System.out.println((i+1)+". "+listeVilles.get(i).getNomCommune()+" a "+listeVilles.get(i).getPopulationTotale()+" habitants");
+            String rep= ((i+1)+". "+listeVilles.get(i).getNomCommune()+" a "+listeVilles.get(i).getPopulationTotale()+" habitants");
+            CadreSortie.Cadre(rep);
         }
 
 
