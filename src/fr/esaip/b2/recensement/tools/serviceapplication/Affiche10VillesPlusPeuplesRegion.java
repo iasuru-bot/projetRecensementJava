@@ -1,11 +1,13 @@
-package fr.esaip.b2.recensement.tools;
+package fr.esaip.b2.recensement.tools.serviceapplication;
 
 import fr.esaip.b2.recensement.entities.Recensement;
 import fr.esaip.b2.recensement.entities.Ville;
+import fr.esaip.b2.recensement.tools.comparator.VillesPopulationComparator;
+import fr.esaip.b2.recensement.tools.utilitaires.PressEnterToContinue;
 
 import java.util.*;
 
-public class Affiche10VillesPlusPeuplesRegion extends MenuService{
+public class Affiche10VillesPlusPeuplesRegion extends MenuService {
     @Override
     public void traiter(Recensement recensement, Scanner scanner) {
         System.out.println("allo 1 ou 2");
@@ -36,7 +38,7 @@ public class Affiche10VillesPlusPeuplesRegion extends MenuService{
                         villesDansRegion.add(v);
                     }
                 }
-                Collections.sort(villesDansRegion,new VillesPopulationComparator());
+                villesDansRegion.sort(new VillesPopulationComparator());
                 int nombreVillesDansRegion=villesDansRegion.size();
                 if (nombreVillesDansRegion>10){nombreVillesDansRegion=10;}
                 for (int i = 0; i < nombreVillesDansRegion; i++) {
@@ -54,5 +56,6 @@ public class Affiche10VillesPlusPeuplesRegion extends MenuService{
                 System.out.println("Votre choix n'est pas bon.");
 
         }
+        PressEnterToContinue.Press(scanner);
     }
 }

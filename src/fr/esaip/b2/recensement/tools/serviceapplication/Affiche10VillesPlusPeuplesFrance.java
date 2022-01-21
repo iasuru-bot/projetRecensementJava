@@ -1,13 +1,15 @@
-package fr.esaip.b2.recensement.tools;
+package fr.esaip.b2.recensement.tools.serviceapplication;
 
 import fr.esaip.b2.recensement.entities.Recensement;
 import fr.esaip.b2.recensement.entities.Ville;
+import fr.esaip.b2.recensement.tools.utilitaires.CadreSortie;
+import fr.esaip.b2.recensement.tools.comparator.VillesPopulationComparator;
+import fr.esaip.b2.recensement.tools.utilitaires.PressEnterToContinue;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
-public class Affiche10VillesPlusPeuplesFrance extends MenuService{
+public class Affiche10VillesPlusPeuplesFrance extends MenuService {
     @Override
     public void traiter(Recensement recensement, Scanner scanner) {
         System.out.println("Vous avez choisi nana");
@@ -17,8 +19,7 @@ public class Affiche10VillesPlusPeuplesFrance extends MenuService{
             String rep= ((i+1)+". "+listeVilles.get(i).getNomCommune()+" a "+listeVilles.get(i).getPopulationTotale()+" habitants");
             CadreSortie.Cadre(rep);
         }
-
-
-
+        PressEnterToContinue.Press(scanner);
     }
+
 }

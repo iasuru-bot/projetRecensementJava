@@ -1,13 +1,15 @@
-package fr.esaip.b2.recensement.tools;
+package fr.esaip.b2.recensement.tools.serviceapplication;
 
 import fr.esaip.b2.recensement.entities.Departement;
 import fr.esaip.b2.recensement.entities.Recensement;
-import fr.esaip.b2.recensement.entities.Region;
 import fr.esaip.b2.recensement.entities.Ville;
+import fr.esaip.b2.recensement.tools.utilitaires.CalculPopulation;
+import fr.esaip.b2.recensement.tools.comparator.DepartementPopulationComparator;
+import fr.esaip.b2.recensement.tools.utilitaires.PressEnterToContinue;
 
 import java.util.*;
 
-public class Affiche10DepartementPlusPeuples extends MenuService{
+public class Affiche10DepartementPlusPeuples extends MenuService {
     @Override
     public void traiter(Recensement recensement, Scanner scanner) {
 
@@ -21,19 +23,18 @@ public class Affiche10DepartementPlusPeuples extends MenuService{
         //Création d'une liste des départements
         List<Departement> departementExistant = new ArrayList<>();
 
-        Iterator<String> iterator = codeDepartementExistant.iterator();
-        while (iterator.hasNext()){
-            String codeDepartement = iterator.next();
-            departementExistant.add(CalculPopulation.calculHabitantsDepartement(recensement,codeDepartement));
+        for (String codeDepartement : codeDepartementExistant) {
+            departementExistant.add(CalculPopulation.calculHabitantsDepartement(recensement, codeDepartement));
 
         }
 
-        Collections.sort(departementExistant,new DepartementPopulationComparator());
+        departementExistant.sort(new DepartementPopulationComparator());
         System.out.println("######################################################################");
         for (int i = 0; i < 10; i++) {
             Departement departement = departementExistant.get(i);
             System.out.println((i+1)+". Le département "+departement.getCodeDepartement()+" a "+departement.getPopulationDepartement()+" habitants");
         }
         System.out.println("######################################################################");
+        PressEnterToContinue.Press(scanner);
     }
 }

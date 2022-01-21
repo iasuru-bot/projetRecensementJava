@@ -1,13 +1,15 @@
-package fr.esaip.b2.recensement.tools;
+package fr.esaip.b2.recensement.tools.serviceapplication;
 
 import fr.esaip.b2.recensement.entities.Departement;
 import fr.esaip.b2.recensement.entities.Recensement;
-import fr.esaip.b2.recensement.entities.Ville;
+import fr.esaip.b2.recensement.tools.utilitaires.CadreSortie;
+import fr.esaip.b2.recensement.tools.utilitaires.CalculPopulation;
+import fr.esaip.b2.recensement.tools.utilitaires.PressEnterToContinue;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class RecherchePopulationDepartement extends MenuService{
+public class RecherchePopulationDepartement extends MenuService {
     @Override
     public void traiter(Recensement recensement, Scanner scanner) {
         CadreSortie.Cadre("Vous avez choisi de rechercher la population d'un département 1-Rechercher par le code du département 2-Sortir");
@@ -28,7 +30,7 @@ public class RecherchePopulationDepartement extends MenuService{
                 catch (InputMismatchException e){
                     System.err.println("Vous n'avez pas saisi une bonne valeur");
                 }
-                Departement departement=CalculPopulation.calculHabitantsDepartement(recensement,codeDep);
+                Departement departement= CalculPopulation.calculHabitantsDepartement(recensement,codeDep);
 
                 if(departement!=null){
                     System.out.println("Le département "+ departement.getCodeDepartement()+" a "+departement.getPopulationDepartement()+ " habitants");
@@ -45,7 +47,7 @@ public class RecherchePopulationDepartement extends MenuService{
             default:
                 System.out.println("Votre choix n'est pas bon.");
                 break;
-
         }
+        PressEnterToContinue.Press(scanner);
     }
 }

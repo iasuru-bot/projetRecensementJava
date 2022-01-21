@@ -1,11 +1,13 @@
-package fr.esaip.b2.recensement.tools;
+package fr.esaip.b2.recensement.tools.serviceapplication;
 
 import fr.esaip.b2.recensement.entities.Recensement;
 import fr.esaip.b2.recensement.entities.Ville;
+import fr.esaip.b2.recensement.tools.comparator.VillesPopulationComparator;
+import fr.esaip.b2.recensement.tools.utilitaires.PressEnterToContinue;
 
 import java.util.*;
 
-public class Affiche10VillesPlusPeuplesDepartement extends MenuService{
+public class Affiche10VillesPlusPeuplesDepartement extends MenuService {
     @Override
     public void traiter(Recensement recensement, Scanner scanner) {
 
@@ -37,7 +39,7 @@ public class Affiche10VillesPlusPeuplesDepartement extends MenuService{
                         villesDansDepartement.add(v);
                     }
                 }
-                Collections.sort(villesDansDepartement,new VillesPopulationComparator());
+                villesDansDepartement.sort(new VillesPopulationComparator());
                 for (int i = 0; i < 10; i++) {
                     System.out.println((i+1)+". "+villesDansDepartement.get(i).getNomCommune()+" a "+villesDansDepartement.get(i).getPopulationTotale()+" habitants");
                 }
@@ -53,5 +55,6 @@ public class Affiche10VillesPlusPeuplesDepartement extends MenuService{
                 System.out.println("Votre choix n'est pas bon.");
 
         }
+        PressEnterToContinue.Press(scanner);
     }
 }

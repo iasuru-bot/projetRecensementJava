@@ -1,4 +1,4 @@
-package fr.esaip.b2.recensement.tools;
+package fr.esaip.b2.recensement.tools.comparator;
 
 import fr.esaip.b2.recensement.entities.Region;
 

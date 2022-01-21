@@ -1,4 +1,4 @@
-package fr.esaip.b2.recensement.tools;
+package fr.esaip.b2.recensement.tools.utilitaires;
 
 public class CadreSortie {
     public static void Cadre(String valeur){

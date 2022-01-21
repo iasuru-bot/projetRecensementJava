@@ -1,4 +1,4 @@
-package fr.esaip.b2.recensement.tools;
+package fr.esaip.b2.recensement.tools.utilitaires;
 import fr.esaip.b2.recensement.entities.Recensement;
 import fr.esaip.b2.recensement.entities.Ville;
 

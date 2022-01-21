@@ -1,13 +1,15 @@
-package fr.esaip.b2.recensement.tools;
+package fr.esaip.b2.recensement.tools.serviceapplication;
 
 import fr.esaip.b2.recensement.entities.Recensement;
 import fr.esaip.b2.recensement.entities.Region;
-import fr.esaip.b2.recensement.entities.Ville;
+import fr.esaip.b2.recensement.tools.utilitaires.CadreSortie;
+import fr.esaip.b2.recensement.tools.utilitaires.CalculPopulation;
+import fr.esaip.b2.recensement.tools.utilitaires.PressEnterToContinue;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class RecherchePopulationRegion extends MenuService{
+public class RecherchePopulationRegion extends MenuService {
     @Override
     public void traiter(Recensement recensement, Scanner scanner) {
 
@@ -30,9 +32,9 @@ public class RecherchePopulationRegion extends MenuService{
                     System.err.println("Vous n'avez pas saisi une bonne valeur");
                 }
 
-                Region region=CalculPopulation.calculHabitantsRegion(recensement,nomRegion,0);
+                Region region= CalculPopulation.calculHabitantsRegion(recensement,nomRegion,0);
 
-                if (region==null){
+                if (region!=null){
 
                     String rep =("La région "+region.getNomRegion()+ " "+ region.getCodeRegion()+ " a "+ region.getPopulationRegion()+" habitants");
                     CadreSortie.Cadre(rep);
@@ -54,7 +56,7 @@ public class RecherchePopulationRegion extends MenuService{
                 }
 
                 region=CalculPopulation.calculHabitantsRegion(recensement,"",codeRegion);
-                if (region==null){
+                if (region!=null){
                     String rep =("La région "+region.getNomRegion()+ " "+ region.getCodeRegion()+ " a "+ region.getPopulationRegion()+" habitants");
                     CadreSortie.Cadre(rep);
                 }
@@ -71,6 +73,7 @@ public class RecherchePopulationRegion extends MenuService{
                 CadreSortie.Cadre("Votre choix n'est pas bon.");
 
         }
+        PressEnterToContinue.Press(scanner);
     }
 
 }

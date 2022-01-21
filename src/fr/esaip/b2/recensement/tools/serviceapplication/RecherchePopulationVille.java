@@ -1,12 +1,14 @@
-package fr.esaip.b2.recensement.tools;
+package fr.esaip.b2.recensement.tools.serviceapplication;
 
 import fr.esaip.b2.recensement.entities.Recensement;
 import fr.esaip.b2.recensement.entities.Ville;
+import fr.esaip.b2.recensement.tools.utilitaires.CadreSortie;
+import fr.esaip.b2.recensement.tools.utilitaires.PressEnterToContinue;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class RecherchePopulationVille extends MenuService{
+public class RecherchePopulationVille extends MenuService {
 
     @Override
     public void traiter(Recensement recensement, Scanner scanner) {
@@ -40,6 +42,8 @@ public class RecherchePopulationVille extends MenuService{
                     }
                 }
                 if (!villeExiste){System.err.println("La ville choisie n'existe pas");}
+                String banal=scanner.nextLine();
+                scanner.nextLine();
                 break;
 
             case 2:
@@ -48,7 +52,9 @@ public class RecherchePopulationVille extends MenuService{
             default:
                 CadreSortie.Cadre("Votre choix n'est pas bon.");
 
+
         }
+        PressEnterToContinue.Press(scanner);
     }
 
 }
