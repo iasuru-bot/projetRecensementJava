@@ -1,10 +1,11 @@
 package fr.esaip.b2.recensement.tools;
 
+import fr.esaip.b2.recensement.entities.Departement;
 import fr.esaip.b2.recensement.entities.Recensement;
 import fr.esaip.b2.recensement.entities.Region;
 import fr.esaip.b2.recensement.entities.Ville;
 
-public class CalculPopulationparRegion {
+public class CalculPopulation {
 
 
     public static Region calculHabitantsRegion(Recensement recensement, String nomRegion, int codeRegion){
@@ -25,5 +26,21 @@ public class CalculPopulationparRegion {
             region = new Region(populationRegion,nomRegionFinal,codeRegionFinal);
         }
         return region;
+    }
+    public static Departement calculHabitantsDepartement(Recensement recensement, String codeDep) {
+        boolean departementExiste = false;
+        int populationDepartement = 0;
+        Departement departement = null;
+        for (Ville v : recensement.getVilles()) {
+            if (v.getCodeDepartement().equals(codeDep)) {
+                departementExiste = true;
+                populationDepartement += v.getPopulationTotale();
+            }
+        }
+        if (departementExiste) {
+            departement = new Departement(populationDepartement, codeDep);
+        }
+        return departement;
+
     }
 }

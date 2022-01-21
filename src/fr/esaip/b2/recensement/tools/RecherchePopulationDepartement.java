@@ -1,5 +1,6 @@
 package fr.esaip.b2.recensement.tools;
 
+import fr.esaip.b2.recensement.entities.Departement;
 import fr.esaip.b2.recensement.entities.Recensement;
 import fr.esaip.b2.recensement.entities.Ville;
 
@@ -11,7 +12,6 @@ public class RecherchePopulationDepartement extends MenuService{
     public void traiter(Recensement recensement, Scanner scanner) {
         CadreSortie.Cadre("Vous avez choisi de rechercher la population d'un département 1-Rechercher par le code du département 2-Sortir");
 
-        boolean departementExiste=false;
         int choix = 0;
         try {choix = scanner.nextInt();}
         catch (InputMismatchException e){
@@ -23,19 +23,14 @@ public class RecherchePopulationDepartement extends MenuService{
 
                 Scanner scan = new Scanner(System.in);
                 String codeDep = null;
-                int populationDepartement=0;
+
                 try {codeDep = scan.next();}
                 catch (InputMismatchException e){
                     System.err.println("Vous n'avez pas saisi une bonne valeur");
                 }
-                for (Ville v:recensement.getVilles()) {
-                    if(v.getCodeDepartement().equals(codeDep)){
-                        departementExiste=true;
-                        populationDepartement += v.getPopulationTotale();
-                    }
-                }
-                if(departementExiste){
-                    System.out.println("Le département a "+populationDepartement+ " habitants");
+                Departement departement=CalculPopulation.calculHabitantsDepartement(recensement,codeDep);
+                if(departement.getPopulationDepartement()!=0){
+                    System.out.println("Le département "+ departement.getCodeDepartement()+" a "+departement.getPopulationDepartement()+ " habitants");
                 }
                 else {
                     System.out.println("Le département n'existe pas");

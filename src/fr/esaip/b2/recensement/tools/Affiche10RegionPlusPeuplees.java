@@ -26,7 +26,7 @@ public class Affiche10RegionPlusPeuplees extends MenuService{
         Iterator<String> iterator = nomRegionExistante.iterator();
         while (iterator.hasNext()){
             String nomRegion = iterator.next();
-            regionExistante.add(CalculPopulationparRegion.calculHabitantsRegion(recensement,nomRegion,0));
+            regionExistante.add(CalculPopulation.calculHabitantsRegion(recensement,nomRegion,0));
         }
 
         Collections.sort(regionExistante,new RegionPopulationComparator());

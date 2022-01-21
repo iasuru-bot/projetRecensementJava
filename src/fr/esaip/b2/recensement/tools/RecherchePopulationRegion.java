@@ -35,7 +35,7 @@ public class RecherchePopulationRegion extends MenuService{
                     System.err.println("Vous n'avez pas saisi une bonne valeur");
                 }
 
-                Region region=CalculPopulationparRegion.calculHabitantsRegion(recensement,nomRegion,0);
+                Region region=CalculPopulation.calculHabitantsRegion(recensement,nomRegion,0);
 
                 if (region.getPopulationRegion()!=0){
                     System.out.println("La région "+region.getNomRegion()+ " "+ region.getCodeRegion()+ " a "+ region.getPopulationRegion()+" habitants");
@@ -57,7 +57,7 @@ public class RecherchePopulationRegion extends MenuService{
                     System.err.println("Vous n'avez pas saisi une bonne valeur");
                 }
 
-                region=CalculPopulationparRegion.calculHabitantsRegion(recensement,"",codeRegion);
+                region=CalculPopulation.calculHabitantsRegion(recensement,"",codeRegion);
                 if (region.getPopulationRegion()!=0){
                     System.out.println("La région "+region.getNomRegion()+ " "+ region.getCodeRegion()+ " a "+ region.getPopulationRegion()+" habitants");
                 }

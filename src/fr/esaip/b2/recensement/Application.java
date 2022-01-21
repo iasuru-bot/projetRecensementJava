@@ -43,29 +43,30 @@ public class Application {
                     recherchePopulationDepartement.traiter(recensement,scanner);
                     break;
                 case 3:
-                    RecherchePopulationRegion recherchePopulationRegion= new RecherchePopulationRegion();
+                    RecherchePopulationRegion recherchePopulationRegion = new RecherchePopulationRegion();
                     recherchePopulationRegion.traiter(recensement,scanner);
                     break;
 
-            case 4:
-                System.out.println("allo");
-                    Affiche10RegionPlusPeuplees affiche10RegionPlusPeuplees= new Affiche10RegionPlusPeuplees();
+                case 4:
+                    Affiche10RegionPlusPeuplees affiche10RegionPlusPeuplees = new Affiche10RegionPlusPeuplees();
                     affiche10RegionPlusPeuplees.traiter(recensement,scanner);
-                break;
-            /*case 5:
-                break;
-            case 6:
-                break;
-            case 7:
-                break;
-            case 8:
-                break;*/
-            case 9:
-                fin=true;
-                break;
-            default:
+                    break;
+                case 5:
+                    Affiche10DepartementPlusPeuples affiche10DepartementPlusPeuples = new Affiche10DepartementPlusPeuples();
+                    affiche10DepartementPlusPeuples.traiter(recensement,scanner);
+                    break;
+                /*case 6:
+                    break;
+                case 7:
+                    break;
+                case 8:
+                    break;*/
+                case 9:
+                    fin=true;
+                    break;
+                default:
 
-                break;
+                    break;
             }
         }while (!fin);
 
