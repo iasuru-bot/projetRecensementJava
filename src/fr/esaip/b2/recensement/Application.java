@@ -55,9 +55,12 @@ public class Application {
                     Affiche10DepartementPlusPeuples affiche10DepartementPlusPeuples = new Affiche10DepartementPlusPeuples();
                     affiche10DepartementPlusPeuples.traiter(recensement,scanner);
                     break;
-                /*case 6:
+                case 6:
+                    Affiche10VillesPlusPeuplesDepartement affiche10VillesPlusPeuplesDepartement = new Affiche10VillesPlusPeuplesDepartement();
+                    affiche10VillesPlusPeuplesDepartement.traiter(recensement,scanner);
                     break;
-                case 7:
+                /*case 7:
+
                     break;*/
                 case 8:
                     Affiche10VillesPlusPeuplesFrance affiche10VillesPlusPeuplesFrance = new Affiche10VillesPlusPeuplesFrance();
