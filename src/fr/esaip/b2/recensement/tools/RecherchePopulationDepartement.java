@@ -32,7 +32,6 @@ public class RecherchePopulationDepartement extends MenuService{
                     if(v.getCodeDepartement().equals(codeDep)){
                         departementExiste=true;
                         populationDepartement += v.getPopulationTotale();
-
                     }
                 }
                 if(departementExiste){

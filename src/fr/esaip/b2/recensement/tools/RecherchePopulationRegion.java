@@ -34,7 +34,15 @@ public class RecherchePopulationRegion extends MenuService{
                 } catch (InputMismatchException e) {
                     System.err.println("Vous n'avez pas saisi une bonne valeur");
                 }
-                this.calculHabitantsRegion(recensement,nomRegion,0);
+
+                Region region=CalculPopulationparRegion.calculHabitantsRegion(recensement,nomRegion,0);
+
+                if (region.getPopulationRegion()!=0){
+                    System.out.println("La région "+region.getNomRegion()+ " "+ region.getCodeRegion()+ " a "+ region.getPopulationRegion()+" habitants");
+                }
+                else{
+                    System.out.println("La région n'existe pas");
+                }
 
                 break;
 
@@ -48,7 +56,15 @@ public class RecherchePopulationRegion extends MenuService{
                 } catch (InputMismatchException e) {
                     System.err.println("Vous n'avez pas saisi une bonne valeur");
                 }
-                this.calculHabitantsRegion(recensement,"",codeRegion);
+
+                region=CalculPopulationparRegion.calculHabitantsRegion(recensement,"",codeRegion);
+                if (region.getPopulationRegion()!=0){
+                    System.out.println("La région "+region.getNomRegion()+ " "+ region.getCodeRegion()+ " a "+ region.getPopulationRegion()+" habitants");
+                }
+                else{
+                    System.out.println("La région n'existe pas");
+                }
+
                 break;
 
             case 3:
@@ -60,23 +76,4 @@ public class RecherchePopulationRegion extends MenuService{
         }
     }
 
-    private void calculHabitantsRegion(Recensement recensement, String nomRegion, int codeRegion){
-        boolean regionExiste = false;
-        int populationRegion= 0;
-        String nomRegionFinal=null;
-        int codeRegionFinal=0;
-        for (Ville v : recensement.getVilles()) {
-            if (v.getNomRegion().equals(nomRegion) || v.getCodeRegion()==codeRegion) {
-                regionExiste = true;
-                populationRegion += v.getPopulationTotale();
-                nomRegionFinal=v.getNomRegion();
-                codeRegionFinal=v.getCodeRegion();
-            }
-        }
-        if (regionExiste) {
-            System.out.println("La région "+ nomRegionFinal+" " +codeRegionFinal+ " a " + populationRegion + " habitants");
-        } else {
-            System.out.println("La région n'existe pas");
-        }
-    }
 }

@@ -47,9 +47,12 @@ public class Application {
                     recherchePopulationRegion.traiter(recensement,scanner);
                     break;
 
-            /*case 4:
+            case 4:
+                System.out.println("allo");
+                    Affiche10RegionPlusPeuplees affiche10RegionPlusPeuplees= new Affiche10RegionPlusPeuplees();
+                    affiche10RegionPlusPeuplees.traiter(recensement,scanner);
                 break;
-            case 5:
+            /*case 5:
                 break;
             case 6:
                 break;
