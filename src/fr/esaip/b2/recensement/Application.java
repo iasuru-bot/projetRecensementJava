@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class Application {
 
     public static void main(String[] args) {
-        //création de l'instance recensement à partir d'un csv
+        //Création de l'instance recensement à partir d'un csv
         ImporterRecensement importerRecensement = new ImporterRecensement();
         Recensement recensement = new Recensement();
         try{recensement= importerRecensement.CreationRecensement();}
@@ -20,15 +20,13 @@ public class Application {
             e.printStackTrace();
             System.err.println("Problème rencontré lors de la création du rencensement");
         }
-
-
+        System.out.println("``````````````````$$$$$\n`````````````$$$$$$´´´´$$$$$$\n``````````$$$´´´´´´´´´´´´´´´´$$$\n````````$`$$´´´´´´´´´´´´´´´´´´´´$$\n```````$´$$$´´´´´´´´´´´´´´´´´´´´´$$$$\n`````$´´$$$$´´´´´´´´´´´´´´´´´´´´´´´´´´$\n````$´´$$$$$´´´´´´´´´´$$$$$$$´´´´´´´´´$$\n```$´´´$$$$$$$´´´$$$$$$$$$$$$$$$$$´´´´´$$\n``$´´´´$$$$$$$$$$$$$$$$$$$$$$$$$$$$$´´´´$$\n`$´´´´´´$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$´´$\n`$´´´´´´$$$$$$$$$$$´´´´$$$$$$$$$$$$$$$$$$$\n$´´´´´´´´$$$$$$$$'''''''''$$$$$$$´´´´´´´´$$\n$´´´´´´´´´$$$$$$Recensement$$$$´´´´´´´´´´´$\n`$´´´´´´´´´$$$$$´´´3000´´´$$$´´´´´´´´´´´$\n`$´´´´´´´´´´$$$$$´´´´´´´´$$$$´´´´´´´´´´´$\n`$´´´´´´´´´´´$$$$$$´´´´$$$$$´´´´´´´´´´´$$\n``$´´´´´´´´´´´$$$$$$$$$$$$$$´´´´´´´´´´´$\n``$$´´´´´´´´´´´´$$$$$$$$$$$$´´´´´´´´´´$$\n```$$´´´´´´´´´´´´$$$$$$$$$$´´´´´´´´´´$$\n````$´´´´´´´´´´´´$$$$$$$$$´´´´´´´´´´´$\n`````$´´´´´´´´´´´$$$$$$$$´´´´´´´´´´´$\n``````$$´´´´´´´´´$$$$$$´´´´´´´´´´´$$\n````````$$´´´´´´$$$$$´´´´´´´´´´´$$\n``````````$$$´$$$$´´´´´´´´´´´$$$\n`````````````$$$$$´´´´´´$$$$$\n``````````````````$$$$$$");
 
         boolean fin = false;
         do {
 
             Scanner scanner = new Scanner(System.in);
-            System.out.println("``````````````````$$$$$\n`````````````$$$$$$´´´´$$$$$$\n``````````$$$´´´´´´´´´´´´´´´´$$$\n````````$`$$´´´´´´´´´´´´´´´´´´´´$$\n```````$´$$$´´´´´´´´´´´´´´´´´´´´´$$$$\n`````$´´$$$$´´´´´´´´´´´´´´´´´´´´´´´´´´$\n````$´´$$$$$´´´´´´´´´´$$$$$$$´´´´´´´´´$$\n```$´´´$$$$$$$´´´$$$$$$$$$$$$$$$$$´´´´´$$\n``$´´´´$$$$$$$$$$$$$$$$$$$$$$$$$$$$$´´´´$$\n`$´´´´´´$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$´´$\n`$´´´´´´$$$$$$$$$$$´´´´$$$$$$$$$$$$$$$$$$$\n$´´´´´´´´$$$$$$$$'''''''''$$$$$$$´´´´´´´´$$\n$´´´´´´´´´$$$$$$Recensement$$$$´´´´´´´´´´´$\n`$´´´´´´´´´$$$$$´´´3000´´´$$$´´´´´´´´´´´$\n`$´´´´´´´´´´$$$$$´´´´´´´´$$$$´´´´´´´´´´´$\n`$´´´´´´´´´´´$$$$$$´´´´$$$$$´´´´´´´´´´´$$\n``$´´´´´´´´´´´$$$$$$$$$$$$$$´´´´´´´´´´´$\n``$$´´´´´´´´´´´´$$$$$$$$$$$$´´´´´´´´´´$$\n```$$´´´´´´´´´´´´$$$$$$$$$$´´´´´´´´´´$$\n````$´´´´´´´´´´´´$$$$$$$$$´´´´´´´´´´´$\n`````$´´´´´´´´´´´$$$$$$$$´´´´´´´´´´´$\n``````$$´´´´´´´´´$$$$$$´´´´´´´´´´´$$\n````````$$´´´´´´$$$$$´´´´´´´´´´´$$\n``````````$$$´$$$$´´´´´´´´´´´$$$\n`````````````$$$$$´´´´´´$$$$$\n``````````````````$$$$$$");
-            CadreSortie.Cadre("Veuillez choisir une proposition:\n 1-Rechercher la population d'une ville\n 2-Rechercher la population d'un departement\n 3-Rechercher la populationd'une region\n 4-Afficher les 10 régions les plus peuplées\n 5-Afficher les 10 départements les plus peuplés\n 6-Afficher les 10 villes les plus peuplées d'un departement\n 7-Afficher les 10 villes les plus peuplées d'une région\n 8-Afficher les 10 villes les plus peuplées de France\n 9-Sortir");
+            CadreSortie.Cadre("Veuillez choisir une proposition: \n 1-Rechercher la population d'une ville\n 2-Rechercher la population d'un departement\n 3-Rechercher la populationd'une region\n 4-Afficher les 10 régions les plus peuplées\n 5-Afficher les 10 départements les plus peuplés\n 6-Afficher les 10 villes les plus peuplées d'un departement\n 7-Afficher les 10 villes les plus peuplées d'une région\n 8-Afficher les 10 villes les plus peuplées de France\n 9-Sortir");
             int choix = 0;
             try {choix = scanner.nextInt();}
             catch (InputMismatchException e){
@@ -74,15 +72,6 @@ public class Application {
                 }
             }
         }while (!fin);
-
-
-
-
-        //case 6 afficher les 10 villes les plus pop d'un dep. utiliser Collections.sort
-        //case 7 afficher les 10 villes les plus pop d'une region. utiliser Collections.sort
-        //case 8 afficher les 10 villes les plus pop. utiliser Collections.sort
-        //case 9 Sortir / message de sortie ?
-
 
     }
 }
