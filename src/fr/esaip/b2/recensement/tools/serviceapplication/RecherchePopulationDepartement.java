@@ -33,7 +33,8 @@ public class RecherchePopulationDepartement extends MenuService {
                 Departement departement= CalculPopulation.calculHabitantsDepartement(recensement,codeDep);
 
                 if(departement!=null){
-                    System.out.println("Le département "+ departement.getCodeDepartement()+" a "+departement.getPopulationDepartement()+ " habitants");
+                    String rep =("Le département "+ departement.getCodeDepartement()+" a "+departement.getPopulationDepartement()+ " habitants");
+                    CadreSortie.Cadre(rep);
                 }
                 else {
                     System.err.println("Le département n'existe pas");
@@ -45,9 +46,10 @@ public class RecherchePopulationDepartement extends MenuService {
                 break;
 
             default:
-                System.out.println("Votre choix n'est pas bon.");
+                CadreSortie.Cadre("Votre choix n'est pas bon.");
                 break;
         }
+        CadreSortie.Cadre(" Vous allez être redirigé vers le menu.");
         PressEnterToContinue.Press(scanner);
     }
 }

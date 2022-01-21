@@ -3,6 +3,7 @@ package fr.esaip.b2.recensement.tools.serviceapplication;
 import fr.esaip.b2.recensement.entities.Recensement;
 import fr.esaip.b2.recensement.entities.Region;
 import fr.esaip.b2.recensement.entities.Ville;
+import fr.esaip.b2.recensement.tools.utilitaires.CadreSortie;
 import fr.esaip.b2.recensement.tools.utilitaires.CalculPopulation;
 import fr.esaip.b2.recensement.tools.comparator.RegionPopulationComparator;
 import fr.esaip.b2.recensement.tools.utilitaires.PressEnterToContinue;
@@ -31,12 +32,13 @@ public class Affiche10RegionPlusPeuplees extends MenuService {
         }
 
         regionExistante.sort(new RegionPopulationComparator());
-        System.out.println("######################################################################");
+        CadreSortie.Cadre("Voici les 10 régions les plus peuplées de France :");
         for (int i = 0; i < 10; i++) {
             Region region = regionExistante.get(i);
             System.out.println((i+1)+".La région "+region.getNomRegion()+ " "+ region.getCodeRegion()+ " a "+ region.getPopulationRegion()+" habitants");
         }
-        System.out.println("######################################################################");
+        System.out.println("####################################################################################################");
+        CadreSortie.Cadre(" Vous allez être redirigé vers le menu.");
         PressEnterToContinue.Press(scanner);
     }
 }

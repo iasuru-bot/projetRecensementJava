@@ -51,6 +51,7 @@ public class RecherchePopulationVille extends MenuService {
 
 
         }
+        CadreSortie.Cadre(" Vous allez être redirigé vers le menu.");
         PressEnterToContinue.Press(scanner);
     }
 

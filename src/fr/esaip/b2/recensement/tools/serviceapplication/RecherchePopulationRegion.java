@@ -73,6 +73,7 @@ public class RecherchePopulationRegion extends MenuService {
                 CadreSortie.Cadre("Votre choix n'est pas bon.");
 
         }
+        CadreSortie.Cadre(" Vous allez être redirigé vers le menu.");
         PressEnterToContinue.Press(scanner);
     }
 

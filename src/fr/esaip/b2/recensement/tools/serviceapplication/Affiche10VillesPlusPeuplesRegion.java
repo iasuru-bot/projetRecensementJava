@@ -3,6 +3,7 @@ package fr.esaip.b2.recensement.tools.serviceapplication;
 import fr.esaip.b2.recensement.entities.Recensement;
 import fr.esaip.b2.recensement.entities.Ville;
 import fr.esaip.b2.recensement.tools.comparator.VillesPopulationComparator;
+import fr.esaip.b2.recensement.tools.utilitaires.CadreSortie;
 import fr.esaip.b2.recensement.tools.utilitaires.PressEnterToContinue;
 
 import java.util.*;
@@ -10,7 +11,7 @@ import java.util.*;
 public class Affiche10VillesPlusPeuplesRegion extends MenuService {
     @Override
     public void traiter(Recensement recensement, Scanner scanner) {
-        System.out.println("allo 1 ou 2");
+        CadreSortie.Cadre("Vous avez choisi d'afficher les villes les plus peuplées d'une région.\n 1-Rentrer le nom de la région\n 2-Sortir");
 
         int choix = 0;
         try {choix = scanner.nextInt();}
@@ -19,8 +20,7 @@ public class Affiche10VillesPlusPeuplesRegion extends MenuService {
         }
         switch (choix){
             case 1:
-                System.out.println("Vous avez choisi d'afficher les villes les plus peuplés avec le nom de la région");
-                System.out.println("Veuillez saisir le code du région souhaité:");
+                CadreSortie.Cadre("Veuillez saisir le nom de la région souhaitée:");
 
                 Scanner scan = new Scanner(System.in);
                 String nomRegion = null;
@@ -41,21 +41,24 @@ public class Affiche10VillesPlusPeuplesRegion extends MenuService {
                 villesDansRegion.sort(new VillesPopulationComparator());
                 int nombreVillesDansRegion=villesDansRegion.size();
                 if (nombreVillesDansRegion>10){nombreVillesDansRegion=10;}
-                for (int i = 0; i < nombreVillesDansRegion; i++) {
-                    System.out.println((i+1)+". "+villesDansRegion.get(i).getNomCommune()+" a "+villesDansRegion.get(i).getPopulationTotale()+" habitants");
+                if (regionExiste) {
+                    CadreSortie.Cadre("Voici les 10 villes les plus peuplées de "+nomRegion+" :");
+                    for (int i = 0; i < nombreVillesDansRegion; i++) {
+                        System.out.println((i + 1) + ". " + villesDansRegion.get(i).getNomCommune() + " a " + villesDansRegion.get(i).getPopulationTotale() + " habitants");
+                    }
+                    System.out.println("####################################################################################################");
                 }
-
-
-                if (!regionExiste){System.err.println("La region choisie n'existe pas");}
+                else{System.err.println("La région choisie n'existe pas");}
                 break;
 
             case 2:
                 break;
 
             default:
-                System.out.println("Votre choix n'est pas bon.");
+                CadreSortie.Cadre("Votre choix n'est pas bon.");
 
         }
+        CadreSortie.Cadre(" Vous allez être redirigé vers le menu.");
         PressEnterToContinue.Press(scanner);
     }
 }
