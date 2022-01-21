@@ -32,7 +32,7 @@ public class RecherchePopulationRegion extends MenuService{
 
                 Region region=CalculPopulation.calculHabitantsRegion(recensement,nomRegion,0);
 
-                if (region.getPopulationRegion()!=0){
+                if (region==null){
 
                     String rep =("La région "+region.getNomRegion()+ " "+ region.getCodeRegion()+ " a "+ region.getPopulationRegion()+" habitants");
                     CadreSortie.Cadre(rep);
@@ -54,7 +54,7 @@ public class RecherchePopulationRegion extends MenuService{
                 }
 
                 region=CalculPopulation.calculHabitantsRegion(recensement,"",codeRegion);
-                if (region.getPopulationRegion()!=0){
+                if (region==null){
                     String rep =("La région "+region.getNomRegion()+ " "+ region.getCodeRegion()+ " a "+ region.getPopulationRegion()+" habitants");
                     CadreSortie.Cadre(rep);
                 }
