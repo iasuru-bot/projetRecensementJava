@@ -27,7 +27,8 @@ public class Application {
         do {
 
             Scanner scanner = new Scanner(System.in);
-            CadreSortie.Cadre("Texte blabalblabalbalbalbalabalblabalbalbalablababal");
+            System.out.println("``````````````````$$$$$\n`````````````$$$$$$´´´´$$$$$$\n``````````$$$´´´´´´´´´´´´´´´´$$$\n````````$`$$´´´´´´´´´´´´´´´´´´´´$$\n```````$´$$$´´´´´´´´´´´´´´´´´´´´´$$$$\n`````$´´$$$$´´´´´´´´´´´´´´´´´´´´´´´´´´$\n````$´´$$$$$´´´´´´´´´´$$$$$$$´´´´´´´´´$$\n```$´´´$$$$$$$´´´$$$$$$$$$$$$$$$$$´´´´´$$\n``$´´´´$$$$$$$$$$$$$$$$$$$$$$$$$$$$$´´´´$$\n`$´´´´´´$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$´´$\n`$´´´´´´$$$$$$$$$$$´´´´$$$$$$$$$$$$$$$$$$$\n$´´´´´´´´$$$$$$$$'''''''''$$$$$$$´´´´´´´´$$\n$´´´´´´´´´$$$$$$Recensement$$$$´´´´´´´´´´´$\n`$´´´´´´´´´$$$$$´´´3000´´´$$$´´´´´´´´´´´$\n`$´´´´´´´´´´$$$$$´´´´´´´´$$$$´´´´´´´´´´´$\n`$´´´´´´´´´´´$$$$$$´´´´$$$$$´´´´´´´´´´´$$\n``$´´´´´´´´´´´$$$$$$$$$$$$$$´´´´´´´´´´´$\n``$$´´´´´´´´´´´´$$$$$$$$$$$$´´´´´´´´´´$$\n```$$´´´´´´´´´´´´$$$$$$$$$$´´´´´´´´´´$$\n````$´´´´´´´´´´´´$$$$$$$$$´´´´´´´´´´´$\n`````$´´´´´´´´´´´$$$$$$$$´´´´´´´´´´´$\n``````$$´´´´´´´´´$$$$$$´´´´´´´´´´´$$\n````````$$´´´´´´$$$$$´´´´´´´´´´´$$\n``````````$$$´$$$$´´´´´´´´´´´$$$\n`````````````$$$$$´´´´´´$$$$$\n``````````````````$$$$$$");
+            CadreSortie.Cadre("Veuillez choisir une proposition:\n 1-Rechercher la population d'une ville\n 2-Rechercher la population d'un departement\n 3-Rechercher la populationd'une region\n 4-Afficher les 10 régions les plus peuplées\n 5-Afficher les 10 départements les plus peuplés\n 6-Afficher les 10 villes les plus peuplées d'un departement\n 7-Afficher les 10 villes les plus peuplées d'une région\n 8-Afficher les 10 villes les plus peuplées de France\n 9-Sortir");
             int choix = 0;
             try {choix = scanner.nextInt();}
             catch (InputMismatchException e){
