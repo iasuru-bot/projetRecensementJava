@@ -25,7 +25,8 @@ public class Application {
         do {
 
             Scanner scanner = new Scanner(System.in);
-            CadreSortie.Cadre("Texte blabalblabalbalbalbalabalblabalbalbalablababal");
+            System.out.println("``````````````````$$$$$\n`````````````$$$$$$´´´´$$$$$$\n``````````$$$´´´´´´´´´´´´´´´´$$$\n````````$`$$´´´´´´´´´´´´´´´´´´´´$$\n```````$´$$$´´´´´´´´´´´´´´´´´´´´´$$$$\n`````$´´$$$$´´´´´´´´´´´´´´´´´´´´´´´´´´$\n````$´´$$$$$´´´´´´´´´´$$$$$$$´´´´´´´´´$$\n```$´´´$$$$$$$´´´$$$$$$$$$$$$$$$$$´´´´´$$\n``$´´´´$$$$$$$$$$$$$$$$$$$$$$$$$$$$$´´´´$$\n`$´´´´´´$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$´´$\n`$´´´´´´$$$$$$$$$$$´´´´$$$$$$$$$$$$$$$$$$$\n$´´´´´´´´$$$$$$$$'''''''''$$$$$$$´´´´´´´´$$\n$´´´´´´´´´$$$$$$Recensement$$$$´´´´´´´´´´´$\n`$´´´´´´´´´$$$$$´´´3000´´´$$$´´´´´´´´´´´$\n`$´´´´´´´´´´$$$$$´´´´´´´´$$$$´´´´´´´´´´´$\n`$´´´´´´´´´´´$$$$$$´´´´$$$$$´´´´´´´´´´´$$\n``$´´´´´´´´´´´$$$$$$$$$$$$$$´´´´´´´´´´´$\n``$$´´´´´´´´´´´´$$$$$$$$$$$$´´´´´´´´´´$$\n```$$´´´´´´´´´´´´$$$$$$$$$$´´´´´´´´´´$$\n````$´´´´´´´´´´´´$$$$$$$$$´´´´´´´´´´´$\n`````$´´´´´´´´´´´$$$$$$$$´´´´´´´´´´´$\n``````$$´´´´´´´´´$$$$$$´´´´´´´´´´´$$\n````````$$´´´´´´$$$$$´´´´´´´´´´´$$\n``````````$$$´$$$$´´´´´´´´´´´$$$\n`````````````$$$$$´´´´´´$$$$$\n``````````````````$$$$$$");
+            CadreSortie.Cadre("Veuillez choisir une proposition:\n 1-Rechercher la population d'une ville\n 2-Rechercher la population d'un departement\n 3-Rechercher la populationd'une region\n 4-Afficher les 10 régions les plus peuplées\n 5-Afficher les 10 départements les plus peuplés\n 6-Afficher les 10 villes les plus peuplées d'un departement\n 7-Afficher les 10 villes les plus peuplées d'une région\n 8-Afficher les 10 villes les plus peuplées de France\n 9-Sortir");
             int choix = 0;
             try {choix = scanner.nextInt();}
             catch (InputMismatchException e){
@@ -34,45 +35,41 @@ public class Application {
             }
 
             switch (choix) {
-                case 1:
+                case 1 -> {
                     RecherchePopulationVille recherchePopulationVille = new RecherchePopulationVille();
-                    recherchePopulationVille.traiter(recensement,scanner);
-                    break;
-                case 2:
+                    recherchePopulationVille.traiter(recensement, scanner);
+                }
+                case 2 -> {
                     RecherchePopulationDepartement recherchePopulationDepartement = new RecherchePopulationDepartement();
-                    recherchePopulationDepartement.traiter(recensement,scanner);
-                    break;
-                case 3:
+                    recherchePopulationDepartement.traiter(recensement, scanner);
+                }
+                case 3 -> {
                     RecherchePopulationRegion recherchePopulationRegion = new RecherchePopulationRegion();
-                    recherchePopulationRegion.traiter(recensement,scanner);
-                    break;
-
-                case 4:
+                    recherchePopulationRegion.traiter(recensement, scanner);
+                }
+                case 4 -> {
                     Affiche10RegionPlusPeuplees affiche10RegionPlusPeuplees = new Affiche10RegionPlusPeuplees();
-                    affiche10RegionPlusPeuplees.traiter(recensement,scanner);
-                    break;
-                case 5:
+                    affiche10RegionPlusPeuplees.traiter(recensement, scanner);
+                }
+                case 5 -> {
                     Affiche10DepartementPlusPeuples affiche10DepartementPlusPeuples = new Affiche10DepartementPlusPeuples();
-                    affiche10DepartementPlusPeuples.traiter(recensement,scanner);
-                    break;
-                case 6:
+                    affiche10DepartementPlusPeuples.traiter(recensement, scanner);
+                }
+                case 6 -> {
                     Affiche10VillesPlusPeuplesDepartement affiche10VillesPlusPeuplesDepartement = new Affiche10VillesPlusPeuplesDepartement();
-                    affiche10VillesPlusPeuplesDepartement.traiter(recensement,scanner);
-                    break;
-                case 7:
+                    affiche10VillesPlusPeuplesDepartement.traiter(recensement, scanner);
+                }
+                case 7 -> {
                     Affiche10VillesPlusPeuplesRegion affiche10VillesPlusPeuplesRegion = new Affiche10VillesPlusPeuplesRegion();
-                    affiche10VillesPlusPeuplesRegion.traiter(recensement,scanner);
-                    break;
-                case 8:
+                    affiche10VillesPlusPeuplesRegion.traiter(recensement, scanner);
+                }
+                case 8 -> {
                     Affiche10VillesPlusPeuplesFrance affiche10VillesPlusPeuplesFrance = new Affiche10VillesPlusPeuplesFrance();
-                    affiche10VillesPlusPeuplesFrance.traiter(recensement,scanner);
-                    break;
-                case 9:
-                    fin=true;
-                    break;
-                default:
-
-                    break;
+                    affiche10VillesPlusPeuplesFrance.traiter(recensement, scanner);
+                }
+                case 9 -> fin = true;
+                default -> {
+                }
             }
         }while (!fin);
 
