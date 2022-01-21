@@ -11,11 +11,7 @@ public class RecherchePopulationRegion extends MenuService{
     @Override
     public void traiter(Recensement recensement, Scanner scanner) {
 
-
-        System.out.println("Vous avez choisi de rechercher la population d'une région:");
-        System.out.println("1-Rechercher par le nom d'une région");
-        System.out.println("2-Rechercher par le code d'une région");
-        System.out.println("3-Sortir");
+        CadreSortie.Cadre("Vous avez choisi de rechercher la population d'une région: \n 1-Rechercher par le nom d'une région \n 2-Rechercher par le code d'une région \n 3-Sortir");
 
         int choix = 0;
         try {
@@ -25,8 +21,7 @@ public class RecherchePopulationRegion extends MenuService{
         }
         switch (choix) {
             case 1:
-                System.out.println("Vous avez choisi de rechercher par le nom d'une région");
-                System.out.println("Veuillez saisir le nom de la region recherché:");
+                CadreSortie.Cadre("Vous avez choisi de rechercher par le nom d'une région \n Veuillez saisir le nom de la region recherché:");
 
                 String nomRegion = null;
                 try {
@@ -38,17 +33,18 @@ public class RecherchePopulationRegion extends MenuService{
                 Region region=CalculPopulation.calculHabitantsRegion(recensement,nomRegion,0);
 
                 if (region.getPopulationRegion()!=0){
-                    System.out.println("La région "+region.getNomRegion()+ " "+ region.getCodeRegion()+ " a "+ region.getPopulationRegion()+" habitants");
+
+                    String rep =("La région "+region.getNomRegion()+ " "+ region.getCodeRegion()+ " a "+ region.getPopulationRegion()+" habitants");
+                    CadreSortie.Cadre(rep);
                 }
                 else{
-                    System.out.println("La région n'existe pas");
+                    CadreSortie.Cadre("La région n'existe pas");
                 }
 
                 break;
 
             case 2:
-                System.out.println("Vous avez choisi de rechercher par le code d'une région");
-                System.out.println("Veuillez saisir le code de la region recherché:");
+                CadreSortie.Cadre("Vous avez choisi de rechercher par le code d'une région\nVeuillez saisir le code de la region recherché:");
 
                 int codeRegion = 0;
                 try {
@@ -59,10 +55,11 @@ public class RecherchePopulationRegion extends MenuService{
 
                 region=CalculPopulation.calculHabitantsRegion(recensement,"",codeRegion);
                 if (region.getPopulationRegion()!=0){
-                    System.out.println("La région "+region.getNomRegion()+ " "+ region.getCodeRegion()+ " a "+ region.getPopulationRegion()+" habitants");
+                    String rep =("La région "+region.getNomRegion()+ " "+ region.getCodeRegion()+ " a "+ region.getPopulationRegion()+" habitants");
+                    CadreSortie.Cadre(rep);
                 }
                 else{
-                    System.out.println("La région n'existe pas");
+                    CadreSortie.Cadre("La région n'existe pas");
                 }
 
                 break;
@@ -71,7 +68,7 @@ public class RecherchePopulationRegion extends MenuService{
                 break;
 
             default:
-                System.out.println("Votre choix n'est pas bon.");
+                CadreSortie.Cadre("Votre choix n'est pas bon.");
 
         }
     }
