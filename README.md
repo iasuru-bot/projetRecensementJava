@@ -6,12 +6,11 @@ Instruction de lancement :
 Lancer le programme intitulé Application.java. 
 
 Naviguer dans le programme :
-Ce programme fonctionne comme un menu. Vous devez écrire le chiffre correspondant à la requete voulu. Ensuite
-il faut le valider avec "Entrée".
+Ce programme fonctionne comme un menu. Vous devez écrire le chiffre correspondant à la requête voulue. Ensuite, il faut le valider avec "Entrée".
 
-Les erreurs possible :
+Les erreurs possibles :
 Si vous rentrez la mauvaise valeur attendue vous retournerez au menu principal
-Si vous rentrez le nom d'une ville,d'un département ou encore d'une région inexistante ou mal orthographiée alors
+Si vous rentrez le nom d'une ville, d'un département ou encore d'une région inexistante ou mal orthographiée alors
 vous retournerez au menu principal.
 
 Autre moyen d'accéder au code :
