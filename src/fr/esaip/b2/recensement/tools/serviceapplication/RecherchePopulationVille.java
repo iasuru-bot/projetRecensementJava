@@ -12,9 +12,9 @@ public class RecherchePopulationVille extends MenuService {
 
     @Override
     public void traiter(Recensement recensement, Scanner scanner) {
+
         CadreSortie.Cadre("Vous avez choisi de rechercher la population d'une ville:\n1-Rechercher par le nom de la ville\n2-Sortir");
-        //System.out.println("1-Rechercher par le nom de la ville");
-        //System.out.println("2-Sortir");
+
 
         int choix = 0;
         try {choix = scanner.nextInt();}
@@ -24,7 +24,6 @@ public class RecherchePopulationVille extends MenuService {
         switch (choix){
             case 1:
                 CadreSortie.Cadre("Vous avez choisi de rechercher par le nom de la ville\nVeuillez saisir le nom de la ville recherchée:");
-
 
                 Scanner scan = new Scanner(System.in);
                 String nomVille = null;
@@ -42,8 +41,6 @@ public class RecherchePopulationVille extends MenuService {
                     }
                 }
                 if (!villeExiste){System.err.println("La ville choisie n'existe pas");}
-                String banal=scanner.nextLine();
-                scanner.nextLine();
                 break;
 
             case 2:
